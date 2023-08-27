@@ -1,9 +1,9 @@
 pipeline {
-    agent { any { image 'ruby:3.2.2-alpine3.18' } }
+    agent { any }
     stages {
         stage('build') {
             steps {
-                sh 'ruby --version'
+                sh 'docker build -t -f Dockerfile .'
             }
         }
     }
